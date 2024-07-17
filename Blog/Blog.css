@@ -1,0 +1,21 @@
+/* Add this in your style section or external CSS file */
+.keyword-tags .badge {
+    margin: 0.2em;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+}
+
+.primary-keyword {
+    background-color: #28a745;
+    color: white;
+}
+
+.secondary-keyword {
+    background-color: #ffc107;
+    color: white;
+}
+
+.tertiary-keyword {
+    background-color: #dc3545;
+    color: white;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./allBlog.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    
+    <!-- there is start side nav -->
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <h2 class="text-center">AMBITION</h2>
+        <a href="../index.html" class="active">Dashboard</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="seoDropdown" data-toggle="collapse" data-target="#seoMenu" aria-expanded="false">
+                SEO
+            </a>
+            <div class="collapse" id="seoMenu">
+                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="#">Visa Service</a>
+                <a class="dropdown-item" href="#">Business License</a>
+                <a class="dropdown-item" href="#">Airlines Ticket</a>
+                <a class="dropdown-item" href="#">Tour Planner</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="../Blog/Blog.html" id="blogDropdown" data-toggle="collapse" data-target="#blogMenu" aria-expanded="false">
+                Blog
+            </a>
+            <div class="collapse" id="blogMenu">
+                <a class="dropdown-item" href="../Blog/Blog.html">Blog Views</a>
+                <a class="dropdown-item" href="./allBlog.html">All Blog Posts</a>
+                <a class="dropdown-item" href="#">Blog Posts</a>
+                <a class="dropdown-item" href="#">Blog Analytics</a>
+            </div>
+        </div>
+        <a href="#">Advertising</a>
+        <a href="#">Users</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="tourismDropdown" data-toggle="collapse" data-target="#tourismMenu" aria-expanded="false">
+                Tourism
+            </a>
+            <div class="collapse" id="tourismMenu">
+                <a class="dropdown-item" href="#">Tour Packages</a>
+                <a class="dropdown-item" href="#">Tour Analytics</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="visaDropdown" data-toggle="collapse" data-target="#visaMenu" aria-expanded="false">
+                Visa
+            </a>
+            <div class="collapse" id="visaMenu">
+                <a class="dropdown-item" href="#">Visa Applications</a>
+                <a class="dropdown-item" href="#">Visa Analytics</a>
+            </div>
+        </div>
+        <a href="#">Components</a>
+        <a href="#">Settings</a>
+    </div>
+
+
+    <!-- there is end side nav -->
+
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+                    <div class="card-body">
+                       
+                        <div class="typeBlog">
+                            <input type="text" placeholder="Type blog title or ID..." id="searchInput">
+                            <button class=" btn-Clr ml-2" onclick="searchBlogs()">Search Blogs</button>
+                        </div>
+                        <div class="sectionDiv">
+                            <div class="d-flex">
+                                <select class="custom-select" id="bulkAction">
+                                    <option>Bulk Action</option>
+                                    <option>Delete</option>
+                                </select>
+                                <button class="btn btn-Clr ml-2" onclick="applyBulkAction()">Apply</button>
+                            </div>
+                            <div class="sectionCate">
+                                <select class="custom-select" id="categories">
+                                    <option>All Categories</option>
+                                    <option>Traveling</option>
+                                    <option>Technology</option>
+                                </select>
+                                <select class="custom-select ml-2" id="subCategories">
+                                    <option>Sub Categories</option>
+                                    <option>Adventure</option>
+                                    <option>Article</option>
+                                </select>
+                                <button class="btn btn-Clr ml-2" onclick="filterBlogs()">Filter</button>
+                            </div>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="th">
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Categories</th>
+                                    <th>Published</th>
+                                    <th>ID</th>
+                                    <th>SEO Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="blogTableBody">
+                                <!-- Blog entries will be populated here -->
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      
+
+        // Add active class on sidebar navigation click
+        document.querySelectorAll('.sidebar').forEach(function(element) {
+            element.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar a').forEach(function(nav) {
+                    nav.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./allBlog.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.sidebar {
+    width:300px;
+    position: fixed;
+    top: 0;
+    left: 0; /* Always show on desktop */
+    height: 100%;
+    background-color: #f8f9fa;
+    padding-top: 20px;
+    transition: left 0.3s;
+    z-index: 1000;
+    border-right: 2px solid gray;
+}
+.sidebar.hidden {
+    left: -3000px; /* Hide sidebar on mobile */
+}
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    display: block;
+}
+.sidebar a:hover, .sidebar a.active {
+    background-color: #F29645;
+    color: #fff;
+}
+.content {
+    margin-left: 300px;
+    padding: 20px;
+    background-color: #f1f2f6;
+    transition: margin-left 0.3s;
+}
+.toggle-btn {
+    display:none; /* Hide toggle button on desktop */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    width: 50px;
+    height: 50px;
+    background-color: #F29645;
+    color: #fff;
+    border: none;
+    font-size:30px;
+    padding: 3px;
+    border-radius: 5px;
+    outline: none;
+}
+.toggle-btn.active {
+    left: 300px;
+}
+.card-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.revenue-stat {
+    background-color: #F29645;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.revenue-stat h5 {
+    margin-bottom: 0.5rem;
+}
+.revenue-stat h2 {
+    margin-bottom: 0;
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .sidebar{
+        width: 300px;
+        left: -100%; /* Hide sidebar offscreen */
+    }
+    .sidebar.hidden {
+        left: 0; /* Show sidebar when active */
+    }
+    .content {
+        margin-left: 0; /* Reset content margin */
+    }
+    .toggle-btn {
+        display:block; /* Show toggle button on mobile */
+    }
+    .toggle-btn.active {
+        left: 300px; /* Adjust button position when sidebar is active */
+    }
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+@media(max-width:576px) {
+    .sidebar {
+        width: 300px;
+        left: -100%; /* Hide sidebar offscreen */
+    }
+    .sidebar.hidden {
+        left: 0; /* Show sidebar when active */
+    }
+    .content {
+        margin-left: 0; /* Reset content margin */
+    }
+    .toggle-btn {
+        display: block; /* Show toggle button on mobile */
+    }
+    .toggle-btn.active {
+        left: 300px; /* Adjust button position when sidebar is active */
+    }
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+  
+}

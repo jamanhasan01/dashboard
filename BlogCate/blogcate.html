@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./blogcate.css">
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <h2 class="text-center">AMBITION</h2>
+        <a href="../index.html" class="active">Dashboard</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="seoDropdown" data-toggle="collapse" data-target="#seoMenu" aria-expanded="false">
+                SEO
+            </a>
+            <div class="collapse" id="seoMenu">
+                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="#">Visa Service</a>
+                <a class="dropdown-item" href="#">Business License</a>
+                <a class="dropdown-item" href="#">Airlines Ticket</a>
+                <a class="dropdown-item" href="#">Tour Planner</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="./Blog/Blog.html" id="blogDropdown" data-toggle="collapse" data-target="#blogMenu" aria-expanded="false">
+                Blog
+            </a>
+            <div class="collapse" id="blogMenu">
+                <a class="dropdown-item" href="./Blog/Blog.html">View Blog</a>
+                <a class="dropdown-item" href="./allBlog/allBlog.html">All Blog Posts</a>
+                <a class="dropdown-item" href="./BlogCate/blogcate.html">Blog Categories</a>
+                <a class="dropdown-item" href="#">Blog Analytics</a>
+            </div>
+        </div>
+        <a href="#">Advertising</a>
+        <a href="#">Users</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="tourismDropdown" data-toggle="collapse" data-target="#tourismMenu" aria-expanded="false">
+                Tourism
+            </a>
+            <div class="collapse" id="tourismMenu">
+                <a class="dropdown-item" href="#">Tour Packages</a>
+                <a class="dropdown-item" href="#">Tour Analytics</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="visaDropdown" data-toggle="collapse" data-target="#visaMenu" aria-expanded="false">
+                Visa
+            </a>
+            <div class="collapse" id="visaMenu">
+                <a class="dropdown-item" href="#">Visa Applications</a>
+                <a class="dropdown-item" href="#">Visa Analytics</a>
+            </div>
+        </div>
+        <a href="#">Components</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <div class="content">
+        <div class="add-category">
+            <h1>Categories</h1>
+            <div class="input-group">
+                <input type="text" id="new-title" placeholder="Add New Title">
+                <textarea id="description" placeholder="Enter your Description"></textarea>
+                <button class="d-flex" id="add-btn">Add</button>
+            </div>
+        </div>
+        <div class="bulk-actions">
+            <select id="bulk-action">
+                <option value="">Bulk Action</option>
+                <option value="delete">Delete</option>
+                <!-- Add more bulk actions as needed -->
+            </select>
+            <button id="apply-btn">Apply</button>
+            <input type="text" id="search-categories" placeholder="Search Categories">
+            <button id="search-btn">Search</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Slug</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody id="category-list">
+                <!-- Category rows will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./blogcate.js"></script>
+    <script>
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+
+        // Add active class on sidebar navigation click
+        document.querySelectorAll('.sidebar a').forEach(function(element) {
+            element.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar a').forEach(function(nav) {
+                    nav.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Bootstrap collapse functionality
+        $('.collapse').collapse({
+            toggle: false
+        });
+    </script>
+</body>
+</html>

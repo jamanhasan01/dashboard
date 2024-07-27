@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body{
+            background-color:#ECECEC;
+        }
+        .status-active {
+            color: green;
+        }
+        .status-passed {
+            color: red;
+        }
+        .table-header {
+            background-color: #F29645;
+            color: white;
+        }
+        button {
+            background-color: #F29645;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            padding: 8px 5px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- start side nav section ------------------------->
+    <div class="sidebar" id="sidebar">
+        <h2 class="text-center">AMBITION</h2>
+        <a href="../index.html" class="active">Dashboard</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="seoDropdown" data-toggle="collapse" data-target="#seoMenu" aria-expanded="false">
+                SEO
+            </a>
+            <div class="collapse" id="seoMenu">
+                <a class="dropdown-item" href="#">Home Page</a>
+                <a class="dropdown-item" href="#">Visa Service</a>
+                <a class="dropdown-item" href="#">Business License</a>
+                <a class="dropdown-item" href="#">Airlines Ticket</a>
+                <a class="dropdown-item" href="#">Tour Planner</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="./Blog.html" id="blogDropdown" data-toggle="collapse" data-target="#blogMenu" aria-expanded="false">
+                Blog
+            </a>
+            <div class="collapse" id="blogMenu">
+                <a class="dropdown-item" href="./Blog.html">View Blog</a>
+                <a class="dropdown-item" href="./allBlog/allBlog.html">All Blog Posts</a>
+                <a class="dropdown-item" href="./BlogCate/blogcate.html">Blog Categories</a>
+                <a class="dropdown-item" href="#">Blog Analytics</a>
+            </div>
+        </div>
+        <a href="#">Advertising</a>
+        <a href="#">Users</a>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="tourismDropdown" data-toggle="collapse" data-target="#tourismMenu" aria-expanded="false">
+                Tourism
+            </a>
+            <div class="collapse" id="tourismMenu">
+                <a class="dropdown-item" href="#">Tour Packages</a>
+                <a class="dropdown-item" href="#">Tour Analytics</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" href="#" id="visaDropdown" data-toggle="collapse" data-target="#visaMenu" aria-expanded="false">
+                Visa
+            </a>
+            <div class="collapse" id="visaMenu">
+                <a class="dropdown-item" href="#">Visa Applications</a>
+                <a class="dropdown-item" href="#">Visa Analytics</a>
+            </div>
+        </div>
+        <a href="#">Components</a>
+        <a href="#">Settings</a>
+    </div>
+
+    <!-- end side nav section ------------------------->
+
+    <!-- main content start ------------------------------------------------------------------------------->
+    <div class="content mt-4">
+        <div class="d-flex justify-content-between mb-3">
+            <input type="text" class="form-control w-25" placeholder="Search">
+            <button class="btnClr">+ New Customer</button>
+        </div>
+        <table class="table table-bordered">
+            <thead class="table-header">
+                <tr>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Bounces</th>
+                    <th>Bookings</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat this TR block for each customer row -->
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-active">Active</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <tr>
+                    <td>Tosha Minner</td>
+                    <td>+520-465-4953</td>
+                    <td>Eric.Moss@armyspy.com</td>
+                    <td>200 USD</td>
+                    <td>1</td>
+                    <td class="status-passed">Passed</td>
+                </tr>
+                <!-- Repeat end -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- main content section end  -------------------------------------------->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add active class on sidebar navigation click
+        document.querySelectorAll('.sidebar').forEach(function(element) {
+            element.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar a').forEach(function(nav) {
+                    nav.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="../users/user.js"></script>
+</body>
+</html>

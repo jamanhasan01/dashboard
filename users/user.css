@@ -1,0 +1,4 @@
+.toggle-btn.active {
+    left: 300px;
+    background-color:  green !important
+}

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./Blog/Blog.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Add your custom CSS here */
         #viewsChart{
@@ -44,7 +45,7 @@
 
     <div class="sidebar" id="sidebar">
         <h2 class="text-center">AMBITION</h2>
-        <a href="../index.html" class="active">Dashboard</a>
+        <a href="./index.html" class="active">Dashboard</a>
         <div class="dropdown">
             <a class="dropdown-toggle" href="#" id="seoDropdown" data-toggle="collapse" data-target="#seoMenu" aria-expanded="false">
                 SEO
@@ -62,14 +63,14 @@
                 Blog
             </a>
             <div class="collapse" id="blogMenu">
-                <a class="dropdown-item" href="./Blog.html">View Blog</a>
+                <a class="dropdown-item" href="#">View Blog</a>
                 <a class="dropdown-item" href="../allBlog/allBlog.html">All Blog Posts</a>
                 <a class="dropdown-item" href="../BlogCate/blogcate.html">Blog Categories</a>
                 <a class="dropdown-item" href="#">Blog Analytics</a>
             </div>
         </div>
         <a href="#">Advertising</a>
-        <a href="#">Users</a>
+        <a href="./users.html">Users</a>
         <div class="dropdown">
             <a class="dropdown-toggle" href="#" id="tourismDropdown" data-toggle="collapse" data-target="#tourismMenu" aria-expanded="false">
                 Tourism
@@ -105,7 +106,7 @@
                 <h3>Popular Blogs</h3>
                 <div class="blog-entry">
                     <div class="blog-image">
-                        <img src="./image/Image.png" alt="Blog Image" class="img-fluid rounded">
+                        <img src="./Blog/image/Image.png" alt="Blog Image" class="img-fluid rounded">
                     </div>
                     <div class="blog-content">
                         <div class="blogTitle"><h4>Eid Festival - Dubai</h4><span>⭐4.5</span></div>
@@ -167,6 +168,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="./allBlog.js"></script>
+
 </body>
 </html>

@@ -33,6 +33,7 @@
     padding: 20px;
     background-color: #f1f2f6;
     transition: margin-left 0.3s;
+  
 }
 .toggle-btn {
     display:none; /* Hide toggle button on desktop */

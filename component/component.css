@@ -1,0 +1,14 @@
+.table {
+    background-color: #ffa500; /* Orange background */
+    color: black; /* Text color */
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid black; /* Blue border */
+}
+
+.table thead th {
+    background-color: #ff8c00; /* Darker orange for header */
+    color: black; /* White text for header */
+}

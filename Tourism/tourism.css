@@ -1,0 +1,63 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination .page-link {
+    color: #F29645;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #F29645;
+    border-color: #F29645;
+}
+.sectionDiv{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.sectionCate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-Clr{
+    background-color:#F29645;
+    color: white;
+}
+.btn-Clr:hover{
+    color: white;
+    background-color: #e68f43;
+}
+.typeBlog{
+    display:flex;
+    justify-content:space-between;
+}
+.typeBlog > input {
+   width: 85%;
+   outline: none;
+   border-radius: 8px;
+   padding: 10px 15px;
+}
+.typeBlog button {
+   padding: 5px 10px;
+   font-size:1rem;
+   border-radius:8px;
+   outline: none;
+   font-weight:600;
+   display: block;
+}
+.th{
+    background-color:#F29645;
+    color: white;
+}

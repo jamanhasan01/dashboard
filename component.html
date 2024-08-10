@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Blog/Blog.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./component/component.css">
+    <link rel="stylesheet" href="./style.css">
     <style>
         /* Add your custom CSS here */
         #viewsChart{
@@ -76,7 +76,7 @@
                 Tourism
             </a>
             <div class="collapse" id="tourismMenu">
-                <a class="dropdown-item" href="../Tourism/tourism.html">All Packages</a>
+                <a class="dropdown-item" href="./Tourism/tourism.html">All Packages</a>
                 <a class="dropdown-item" href="#">Tour Analytics</a>
             </div>
         </div>
@@ -89,85 +89,109 @@
                 <a class="dropdown-item" href="#">Visa Analytics</a>
             </div>
         </div>
-        <a href="../component.html">Components</a>
+        <a href="./component.html">Components</a>
         <a href="#">Settings</a>
     </div>
-    <div class=" content">
-
-        <!-- Main Content -->
-        <main>
-            <!-- Chart Section -->
-            <div class="chart-container bg-light rounded mb-4">
-                <canvas id="viewsChart" width="100%"></canvas>
-            </div>
-
-            <!-- Popular Blogs Section -->
-            <div class="popular-blogs">
-                <h3>Popular Blogs</h3>
-                <div class="blog-entry">
-                    <div class="blog-image">
-                        <img src="./image/Image.png" alt="Blog Image" class="img-fluid rounded">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blogTitle"><h4>Eid Festival - Dubai</h4><span>⭐4.5</span></div>
-                        <p>The Eid of RESTful APIs has been not only a ride in code for creating, testing, and managing them. The rise of RESTful APIs has been not only a ride in code for creating, testing, and managing them...</p>
-                        
-                    </div>
-                </div>
-                <!-- Repeat .blog-entry for more blogs -->
-            </div>
-        </main>
+    <!-- --------------main section start------------------- -->
+    <div class="content">
+        <table class="table  table-bordered table-striped text-center">
+            <thead class="bg-warning">
+                <tr>
+                    <th>Role</th>
+                    <th>Create Content</th>
+                    <th>Edit Content</th>
+                    <th>Publish Content</th>
+                    <th>Moderate Content</th>
+                    <th>Manage User</th>
+                    <th>Access SEO</th>
+                    <th>View Logs</th>
+                    <th>Manage Roles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Super-Admin</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Admin</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Moderator</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Content Publisher</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>SEO Team</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+ 
     <script>
-        // Chart.js script
-        var ctx = document.getElementById('viewsChart').getContext('2d');
-        var viewsChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-                datasets: [{
-                    label: 'Views',
-                    data: [1200, 1900, 3000, 2500, 2200, 2300, 2100],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-     
-        <script>
-          
-    
-            // Add active class on sidebar navigation click
-            document.querySelectorAll('.sidebar').forEach(function(element) {
-                element.addEventListener('click', function() {
-                    document.querySelectorAll('.sidebar a').forEach(function(nav) {
-                        nav.classList.remove('active');
-                    });
-                    this.classList.add('active');
+      
+
+        // Add active class on sidebar navigation click
+        document.querySelectorAll('.sidebar').forEach(function(element) {
+            element.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar a').forEach(function(nav) {
+                    nav.classList.remove('active');
                 });
+                this.classList.add('active');
             });
-    
-            // Toggle sidebar visibility
-            function toggleSidebar() {
-                var sidebar = document.getElementById('sidebar');
-                sidebar.classList.toggle('hidden');
-            }
-        </script>
-    
+        });
+
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+    </script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
